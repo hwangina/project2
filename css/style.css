@@ -94,7 +94,6 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 #market .contWrap ul {width: 620px;}
 #market .contWrap li {display: inline-block; position: relative; width: 200px; height: 200px;}
 #market .contWrap li span {display: block; width: 100%; height: 100%; box-shadow: 1px 1px 3px rgba(110, 111, 113, 0.75); transition: all 0.1s;}
-#market .contWrap li:hover span {margin-top: 2px; margin-left: 2px; margin-bottom: 2px; margin-right: 2px; width: 196px; height: 196px; box-shadow: 1px 1px 1px rgba(110, 111, 113, 0.85);}
 #market .contWrap li:first-child span {background: url(../images/item1_01.jpg) no-repeat 0 0; background-size: 100% auto;}
 #market .contWrap li:nth-child(2) span {background: url(../images/item1_02.jpg) no-repeat 0 0; background-size: 100% auto;}
 #market .contWrap li:nth-child(3) span {background: url(../images/item2.jpg) no-repeat 0 0; background-size: 100% auto;}
@@ -103,9 +102,10 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 #market .contWrap li:nth-child(6) span {background: url(../images/item3_01.jpg) no-repeat 0 0; background-size: 100% auto;}
 #market .contWrap li:nth-child(7) span {background: url(../images/item4.jpg) no-repeat 0 0; background-size: 100% auto;}
 #market .contWrap li:nth-child(8) span {box-shadow: none;}
-#market .contWrap li:nth-child(8):hover spana {box-shadow: none;}
 #market .contWrap li:last-child span {background: url(../images/item3_02.jpg) no-repeat 0 0; background-size: 100% auto;}
-#market .contWrap li a {display: block; position: absolute; left: 0; top: 0; width:100%; height: 100%; line-height: }
+#market .contWrap li.hasText:hover span {opacity: 0;} 
+#market .contWrap li a {display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; text-align: center; line-height: 200px; font-size: 1.5em; font-weight: 800; color: #000; opacity: 0; transition: opacity 0.3s;}
+#market .contWrap li.hasText:hover a {opacity: 1;} 
 /* CScenter */
 #CScenter {position: relative; font-size: 1em; overflow: hidden;}
 #CScenter .wrap {height: 100%;}
@@ -113,18 +113,25 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 #CScenter .rightArea h3 {margin-top: 168px; width: 100%; line-height: 48px; color: #000;}
 #CScenter .rightArea p {margin-top: 12px;}
 #CScenter .rightArea img {position: absolute; left: 50%; top: 0; height: 100%; z-index: -1;}
-#CScenter .leftArea {float: left; padding: 120px 0; width: 65%;}
-#CScenter .leftArea > div {margin: 0 auto; width: 450px;}
-#CScenter .leftArea h3 {font-size: 1.188em;}
-#CScenter .leftArea table {width: 100%;}
-#CScenter .leftArea table th {font-size: 0.875em; font-weight: 400; line-height: 32px; text-align: left;}
-#CScenter .leftArea table td {font-size: 0.875em; line-height: 30px; text-align: left;}
+
+#CScenter .leftArea {float: left; width: 65%;}
+#CScenter .leftArea .tab {position: relative; margin: 0 auto; padding: 20px; width: 540px; height: 320px; box-shadow: 1px 1px 3px rgba(110, 111, 113, 0.75);}
+#CScenter .leftArea .tab div.content {position: absolute; margin: 0 auto; width: 540px; height: 320px; background-color: #e9e9e9; z-index: 10;}
+#CScenter .leftArea .tab div.active {z-index: 100;}
+#CScenter .leftArea .tabBtn {display: block; position: absolute; left: 20px; top: -30px; width: 120px; height: 30px; background-color: #fff; border-radius: 0 15px 0 0; text-align: center; background-color: #d4d1d1; transition: all 0.3s;}
+#CScenter .leftArea .tabBtn a {margin: 0; padding: 0; font-size: 1.188em; line-height: 40px; font-family: 'Bad Script', cursive; font-weight: 700;}
+#CScenter .leftArea div.QnA .tabBtn {left:130px; border-radius: 15px 15px 0 0;}
+#CScenter .leftArea div.active .tabBtn {background-color: #e9e9e9;}
+#CScenter .leftArea div.active .tabBtn a {display: block; width: 100%; height: 100%;}
+#CScenter .leftArea table {margin: 20px; width: 500px; height: 280px; box-sizing: border-box; vertical-align: middle;}
+#CScenter .leftArea table td {padding: 5px; font-size: 0.875em; line-height: 30px; text-align: left;}
+#CScenter .leftArea table td.num {padding-left: 10px;}
+#CScenter .leftArea table td.date {padding-right: 10px; text-align: right;}
 #CScenter .leftArea table td.num, #CScenter .leftArea table td.qus{font-weight: 700;}
-#CScenter .leftArea table td.num, #CScenter .notice table td.date {letter-spacing: 1.5px;}
+#CScenter .leftArea table td.num, #CScenter .leftArea table td.date {letter-spacing: 1.5px;}
 #CScenter .leftArea table td.tit:hover a {border-bottom: 1px solid #838383;}
 #CScenter .leftArea .QnA {margin-top: 8%;}
 #CScenter .leftArea .QnA table {margin-top: 15px;}
-
 /* footer */
 #footer {width: 100%; height: 250px; background-color: #d4d1d1; font-size: 1em;}
 #footer .wrap {margin: 0 auto; width: 1200px;}
@@ -174,15 +181,14 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 	#market .contWrap li:nth-child(8) {box-shadow: 0px 0px 0px transparent;}
 	#market .contWrap li:first-child, #market .contWrap ul li:nth-child(4), #market .contWrap ul li:nth-child(7) {margin-left: 0;}
 	#market .contWrap li span {display: block; width: 100%; height: 256px;}
+	#market .contWrap li.hasText a {opacity: 1;} 
+	#market .contWrap li.hasText:hover span {opacity: 1;} 
 	#market .contWrap li:hover span {width: 100%; height: 256px; margin-left: 0px; margin-bottom: 0px; box-shadow: 0px 0px 0px transparent;}
 	/* CScenter */
 	#CScenter .leftArea > div {float: left; width: 45%;}
-	#CScenter .leftArea .QnA {margin-top: 0px;}
-	#CScenter .leftArea .QnA table {margin-top: 0px;}
+	#CScenter .leftArea > QnA {float: right;}
 	/* footer */
-	#footer .wrap {
-		width: 100%;
-	}
+	#footer .wrap {width: 100%;}
 }
 @media only screen and (max-width:770px){ /* tablet */
 	#header {height: 60px;}
@@ -196,42 +202,54 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 	#header #GNB ul ul {position: relative;}
 	#header .lnb {display: none;}
 	#header #GNB .mobile_lnb {display: block;}
-	
-	
 	.keyvisual {overflow: hidden;}
+	.keyvisual .gallery {width: 100%;}
 	/* section */
 	/* brand */
-	#brand .printGallery {float: none; margin-left: 0; margin-top: 0; margin-bottom: 0; width: 100%; background-size: 100% auto; background-position: center center; text-align: left;}
+	#brand {margin-top: 50px;}
+	#brand .printGallery {float: none; margin-left: 0; margin-top: 0; margin-bottom: 0; width: 100%; height: 300px; background-size: 100% auto; background-position: center center; text-align: left;}
 	#brand .printGallery h3 {margin-top: 0; padding-top: 10%; padding-left: 10%;}
 	#brand .printGallery p {padding-left: 10%; color: #fff;}
-	#brand .printGallery img {top: -75%;}
+	#brand .printGallery img {top: -100px; width: 100%; min-width: 440px;}
 	#brand .brandStory {float: none; margin-top: 0; width: 100%; text-align: center;}
 	#brand .brandStory .history {margin-top: 45px; padding-left: 35%; text-align: left;}
 	#brand .brandStory .history dl {margin-top: 10px;}
 	#brand .brandStory .history dl.start::before {left: -21px; top: 10px; width: 1px; height: 130px;}
 	#brand .brandStory .copy h4 {margin-top: 10px; font-size: 1.375em; font-weight: 700;}
-	#brand .brandStory .brandStorybtn a {margin: 0 auto; margin-top: 30px;}
+	#brand .brandStory .brandStorybtn a {margin: 0 auto; margin-top: 45px;}
 	#brand .brandGallery {padding-bottom: 0; margin: 0; width: 100%; height: 130px;}
 	#brand .brandGallery ul {width: 1040px;}
 	#brand .brandGallery li {width: 130px; height: 130px;}
-	#brand .brandGallery li:last-child {display: none;}
-	#brand .brandGallery li.more {display: none;}
 	#brand .brandGallery::before {left: 260px; top: 0; width: 130px; height: 130px; border: 3px solid #d5d1d0;}
 	/* market */
-	#market .titWrap {float: none; margin-left: 0; margin-top: 0; width: 100%; background-position: center center;}
-	#market .contWrap {float: none; margin-top: 0; margin-left: 0; width: 100%;}
+	#market {margin-top: 150px;}
+	#market .titWrap {background: none; margin-left: 0; margin-top: 0; width: 100%; height: auto; text-align: center; overflow: visible;}
+	#market .titWrap h3 {margin-top: -30px;}
+	#market .titWrap .making {display: none;}
+	#market .contWrap {float: none; margin-top: 0; margin-left: 0; padding-top: 0; width: 100%; background: url(../images/market_insta_mobile.png) no-repeat 0 0; background-size: 100% auto;}
 	#market .contWrap ul {width: 100%; text-align: center;}
 	#market .contWrap li {width: 30%; height: 0; padding-bottom: 30%; margin-left: 1%; margin-bottom: 1%; overflow: hidden;}
 	#market .contWrap li:first-child, #market .contWrap ul li:nth-child(4), #market .contWrap ul li:nth-child(7) {margin-left: 0;}
 	#market .contWrap li span {display: block; width: 100%; height: 256px;}
 	/* CScenter */
-	#CScenter .wrap a.csbtn {display: block; font-size: 3.375em;}
-	#CScenter .wrap div h3 {display: none;}
-	#CScenter .wrap div {position: absolute; top: 50px; width: 100%; background-color: #fff; z-index: 10;}
-	#CScenter .wrap div.active {z-index: 50;}
+	#CScenter {margin-top: 50px;}
+	#CScenter .rightArea {width: 100%; }
+	#CScenter .rightArea img {display: none;}
+	#CScenter .leftArea {float: none; padding: 0; margin-top: 20px; width: 100%; height: 500px;}
+	#CScenter .leftArea .tab {padding: 0; margin-top: 70px; width: 100%; height: 450px; overflow: visibel}
+	#CScenter .leftArea .tab div.content {position: absolute; margin: 0 auto; width: 100%; height: 450px; background-color: #e9e9e9; z-index: 10;}
+	#CScenter .leftArea .tab div.active {z-index: 100;}
+	#CScenter .leftArea .tabBtn {top: -50px; width: 140px; height: 45px; border-radius: 23px; background-color: #d4d1d1;}
+	#CScenter .leftArea div.notice .tabBtn {left: 50%; margin-left: -105px; text-align: center; }
+	#CScenter .leftArea div.QnA .tabBtn {left: 50%; margin-left: 0; border-radius: 23px;}
+	#CScenter .leftArea div.notice .tabBtn::after {content:""; display: block; position: absolute; left: 105px; top: 0; width: 140px; height: 45px; border-radius: 23px; background-color: #e9e9e9; transition: left 0.3s;}
+	#CScenter .leftArea div.notice.active .tabBtn::after {left: 0px;}
+	#CScenter .leftArea .tabBtn a {position: relative; margin: 0; padding: 0; font-size: 1.188em; line-height: 45px; font-family: 'Bad Script', cursive; font-weight: 700; z-index: 100;}
+	#CScenter .leftArea table {width: 100%; height: 100%;}
+	
 	/* footer */
 	#footer {text-align: center; height: auto;}
-	#footer .footer_logo {display: none; /*float: none; width: 36px;*/ }
+	#footer .footer_logo {display: none; /*float: none; width: 36px;*/ 
 	#footer .footer_logo a {margin: 0; width: 100%; height: 42px; background: url(../images/icon.png) no-repeat 0 0; background-size: 132px auto;}
 	#footer .footerText {float: none; padding-top: 30px;}
 	#footer .snslink {float: none; margin-top: 30px; height: 68px; border-top: 1px solid #8c8989;}
@@ -248,41 +266,33 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 	
 	section {font-size: 0.75em; margin-top: 30px;}
 
-	#brand {font-size: 0.9em;}
-	#brand .printGallery {float: none; margin-left: 0; margin-top: 0; width: 100%; height: 250px; background-size: 100% auto; background-position: center center; text-align: left;}
-	#brand .printGallery h3 {margin-top: 0; padding-top: 10%; padding-left: 10%;}
-	#brand .printGallery p {padding-left: 10%; color: #fff;}
-	#brand .brandStory {float: none; margin-top: 0; width: 100%; text-align: center;}
-	#brand .brandStory .history {margin-top: 20px; padding-left: 35%; text-align: left;}
-	#brand .brandStory .history dl {margin-top: 10px;}
-	#brand .brandStory .history dl.start::before {left: -21px; top: 10px; width: 1px; height: 120px;}
-	#brand .brandStory .copy h4 {margin-top: 10px; font-size: 1.1em;}
-	#brand .brandStory .copy p {font-size: 0.688em;}
-	#brand .brandStory .brandStorybtn a {margin: 0 auto; margin-top: 30px; width: 190px; line-height: 50px; font-size: 0.75em;}
-	#brand .brandGallery {margin: 0; width: 100%; height: 80px; overflow: hidden;}
-	#brand .brandGallery ul {left: -35px; width: 490px;}
-	#brand .brandGallery li {width: 70px; height: 70px;}
-	#brand .brandGallery li.more {display: none;}
-	#brand .brandGallery::before {left: 35px; top: 0; width: 70px; height: 70px;}
-	#brand .brandGallery::after {left: 68px; top: 74px;}
+	/* #brand {font-size: 0.9em;} */
+	/* #brand .printGallery {float: none; margin-left: 0; margin-top: 0; width: 100%; height: 250px; background-size: 100% auto; background-position: center center; text-align: left;} */
+	/* #brand .printGallery h3 {margin-top: 0; padding-top: 10%; padding-left: 10%;} */
+	/* #brand .printGallery p {padding-left: 10%; color: #fff;} */
+	/* #brand .brandStory {float: none; margin-top: 0; width: 100%; text-align: center;} */
+	/* #brand .brandStory .history {margin-top: 20px; padding-left: 35%; text-align: left;} */
+	/* #brand .brandStory .history dl {margin-top: 10px;} */
+	/* #brand .brandStory .history dl.start::before {left: -21px; top: 10px; width: 1px; height: 120px;} */
+	/* #brand .brandStory .copy h4 {margin-top: 10px; font-size: 1.1em;} */
+	/* #brand .brandStory .copy p {font-size: 0.688em;} */
+	/* #brand .brandStory .brandStorybtn a {margin: 0 auto; margin-top: 30px; width: 190px; line-height: 50px; font-size: 0.75em;} */
+	/* #brand .brandGallery {margin: 0; width: 100%; height: 80px; overflow: hidden;} */
+	/* #brand .brandGallery ul {left: -35px; width: 490px;} */
+	/* #brand .brandGallery li {width: 70px; height: 70px;} */
+	/* #brand .brandGallery li.more {display: none;} */
+	/* #brand .brandGallery::before {left: 35px; top: 0; width: 70px; height: 70px;} */
+	/* #brand .brandGallery::after {left: 68px; top: 74px;} */
 	
 	/* market */
-	#market .titWrap {background-size: 100% auto; background-position: center top; font-size: 0.9em;}
-	#market .titWrap img {margin-top: -4%; width: 100%;}
-	#market .contWrap li {width: 45%; height: 0; padding-bottom: 45%; margin-left: 1%; margin-bottom: 1%; overflow: hidden;}
-	#market .contWrap li:first-child, #market .contWrap ul li:nth-child(4), #market .contWrap ul li:nth-child(7) {margin-left: 1%;}
-	#market .contWrap li:first-child, #market .contWrap ul li:nth-child(3), #market .contWrap li:nth-child(5), #market .contWrap ul li:nth-child(7) {margin-left: 0;}
-	#market .contWrap ul li:last-child {display: none;}
-	#market .contWrap li span {display: block; width: 100%; height: 220px;}
-	#market .contWrap li:first-child span {background: url(../images/item1_01.jpg) no-repeat 0 0; background-size: 100% auto;}
-	#market .contWrap li:nth-child(2) span {background: url(../images/item1_02.jpg) no-repeat 0 0; background-size: 100% auto;}
-	#market .contWrap li:nth-child(3) span {background: url(../images/item1_03.jpg) no-repeat 0 0; background-size: 100% auto;}
-	#market .contWrap li:nth-child(4) span {background: url(../images/item1_04.jpg) no-repeat 0 0; background-size: 100% auto;}
-	#market .contWrap li:nth-child(5) span {background: url(../images/item2.jpg) no-repeat 0 0; background-size: 100% auto;}
-	#market .contWrap li:nth-child(6) span {background: url(../images/item3_01.jpg) no-repeat 0 0; background-size: 100% auto;}
-	#market .contWrap li:nth-child(7) span {background: url(../images/item4.jpg) no-repeat 0 0; background-size: 100% auto;}
-	#market .contWrap li:nth-child(8) span {background: url(../images/item3_02.jpg) no-repeat 0 0; background-size: 100% auto;}
+	/* #market .titWrap {background-size: 100% auto; background-position: center top; font-size: 0.9em;} */
+	/* #market .titWrap img {margin-top: -4%; width: 100%;} */
+	/* #market .contWrap li {width: 45%; height: 0; padding-bottom: 45%; margin-left: 1%; margin-bottom: 1%; overflow: hidden;} */
+	/* #market .contWrap li:first-child, #market .contWrap ul li:nth-child(4), #market .contWrap ul li:nth-child(7) {margin-left: 1%;} */
+	/* #market .contWrap li:first-child, #market .contWrap ul li:nth-child(3), #market .contWrap li:nth-child(5), #market .contWrap ul li:nth-child(7) {margin-left: 0;} */
+	/* #market .contWrap ul li:last-child {display: none;} */
+	/* #market .contWrap li span {display: block; width: 100%; height: 220px;} */
 	/* CScenter */
-	#CScenter .wrap span.csbtn {font-size: 2.866em;}
+	/* #CScenter .wrap span.csbtn {font-size: 2.866em;} */
 	/* notice */
 }
