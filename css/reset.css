@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+/* Reset CSS */
+* {margin: 0; padding: 0;}
+body {font-family: "Roboto", "Noto Sans KR", sans-serif; font-size: 1em;}
+a {font-family: "Roboto", "Noto Sans KR", sans-serif; text-decoration: none; color: #000;}
+ul {list-style: none;}
+img {vertical-align: top;}
+table {border: none; border-spacing: 0; border-collapse: collapse;}
+
+/* clearfix */
+.clearfix::before, .clearfix::after {content: ""; display: block;}
+.clearfix::after {clear: both;}

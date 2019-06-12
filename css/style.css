@@ -1,21 +1,15 @@
 @charset "utf-8";
-/* Reset CSS */
-* {margin: 0; padding: 0;}
-body {font-family: "Roboto", "Noto Sans KR", sans-serif; font-size: 1em;}
-a {font-family: "Roboto", "Noto Sans KR", sans-serif; text-decoration: none; color: #000;}
-ul {list-style: none;}
-img {vertical-align: top;}
-table {border: none; border-spacing: 0; border-collapse: collapse;}
-/* clearfix */
-.clearfix::before, .clearfix::after {content: ""; display: block;}
-.clearfix::after {clear: both;}
 
 /* body */
 body.static {position: fixed; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden;}
+
 /* container */
 .container {width: 100%;}
+
+/* skip_nav */
 .skip_nav a {display: block; position: fixed; left: 0; right: 0; top: -64px; text-align: center; line-height: 64px; font-size: 18px; background-color: #d5d1d2; color: #fff; z-index: 1000; transition: top 0.3s;}
 .skip_nav a.active {top:0;}
+
 /* header */
 #header {position: relative; width: 100%; height: 142px;}
 #header .logo {margin: 0 auto; padding-top: 34px; width: 143px; height: 52px;}
@@ -23,6 +17,7 @@ body.static {position: fixed; left: 0; top: 0; right: 0; bottom: 0; overflow: hi
 #header .menu_btn {position: absolute; display: none; z-index: 101;}
 #header .menu_btn a {display: block; width: 30px; height: 30px; background: url(../images/icon.png) no-repeat -176px 0;}
 #header .menu_btn.close a {display: block; width: 30px; height: 30px; background: url(../images/icon.png) no-repeat -206px 0;}
+
 /* GNB */
 #header #GNB {position: absolute; left: 10%; top: 105px; z-index: 99; font-size: 1em; transition: top 0.3s;}
 #header #GNB.active {position: fixed; top: 50px;}
@@ -31,11 +26,13 @@ body.static {position: fixed; left: 0; top: 0; right: 0; bottom: 0; overflow: hi
 #header #GNB > ul > li.active > a {color: #ff7575; border-bottom: 1px solid #ff7575; }
 #header #GNB ul ul {display: none; position: absolute; padding-top: 10px; width: 100%; text-align: center; background-color: rgba(255,255,255,0.5);}
 #header #GNB ul ul li a {font-weight: 300; line-height: 30px;}
-#header #GNB .mobile_lnb {display: none; margin: 70px auto 0; width: 186px;}
+/* media Query display */
+#header #GNB .mobile_lnb {display: none; margin: 70px auto 0; width: 186px;} 
 #header #GNB .mobile_lnb a {float: left; margin-left: 45px;}
 #header #GNB .mobile_lnb .login {display: block; margin-left: 0; width: 30px; height: 30px; background: url(../images/icon.png) no-repeat -236px 0;}
 #header #GNB .mobile_lnb .join {display: block; width: 30px; height: 30px; background: url(../images/icon.png) no-repeat -266px 0;}
 #header #GNB .mobile_lnb .search {display: block; width: 30px; height: 30px; background: url(../images/icon.png) no-repeat -296px 0;}
+
 /* lnb */
 #header .lnb {position: absolute; right: 10%; top: 107px; font-size: 0.75em; font-weight: 300;}
 #header .lnb form {display: inline-block;}
@@ -104,7 +101,7 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 #market .contWrap li:nth-child(8) span {box-shadow: none;}
 #market .contWrap li:last-child span {background: url(../images/item3_02.jpg) no-repeat 0 0; background-size: 100% auto;}
 #market .contWrap li.hasText:hover span {opacity: 0;} 
-#market .contWrap li a {display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; text-align: center; line-height: 200px; font-size: 1.5em; font-weight: 800; color: #000; opacity: 0; transition: opacity 0.3s;}
+#market .contWrap li a {display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; text-align: center; line-height: 200px; font-family: 'Bad Script', cursive; font-size: 1.5em; font-weight: 800; color: #000; opacity: 0; transition: opacity 0.3s;}
 #market .contWrap li.hasText:hover a {opacity: 1;} 
 /* CScenter */
 #CScenter {position: relative; font-size: 1em; overflow: hidden;}
@@ -130,8 +127,7 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 #CScenter .leftArea table td.num, #CScenter .leftArea table td.qus{font-weight: 700;}
 #CScenter .leftArea table td.num, #CScenter .leftArea table td.date {letter-spacing: 1.5px;}
 #CScenter .leftArea table td.tit:hover a {border-bottom: 1px solid #838383;}
-#CScenter .leftArea .QnA {margin-top: 8%;}
-#CScenter .leftArea .QnA table {margin-top: 15px;}
+
 /* footer */
 #footer {width: 100%; height: 250px; background-color: #d4d1d1; font-size: 1em;}
 #footer .wrap {margin: 0 auto; width: 1200px;}
@@ -150,10 +146,7 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 #footer .snslink li:last-child a {width: 43px; background-position: -133px 0;}
 
 
-
-
-/* MEDIA QUERY */
-/* 1280/768/414 */
+/* MEDIA QUERY */ /* 1280/768/414 */
 @media only screen and (max-width:1280px){ /* Basic PC */
 	#header #GNB {left: 3%;}
 	#header .lnb {right: 3%;}
@@ -175,8 +168,11 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 	#brand .brandGallery::before {left: 214px; top: 0; width: 107px; height: 107px;}
 	#brand .brandGallery ul {width: calc(100% + 107px);}
 	#brand .brandGallery li {width: 107px;}
-	#market .titWrap {margin-top: 40px; margin-left: calc(45% - 385px); overflow: hidden;}
-	#market .contWrap {margin-top: 40px;}
+	
+	#market .titWrap {margin-top: 40px; margin-left: 1%; width: 38%; background-size: 100% auto; overflow: hidden;}
+	#market .titWrap img {width: 100%;}
+	#market .contWrap {margin-top: 40px; width: 60%;}
+	#market .contWrap ul {width: 100%;}
 	#market .contWrap li {width: 32%; height: 0; padding-bottom: 32%; margin-left: 1%; margin-bottom: 1%; overflow: hidden;  box-shadow: 1px 1px 3px rgba(110, 111, 113, 0.75);}
 	#market .contWrap li:nth-child(8) {box-shadow: 0px 0px 0px transparent;}
 	#market .contWrap li:first-child, #market .contWrap ul li:nth-child(4), #market .contWrap ul li:nth-child(7) {margin-left: 0;}
@@ -184,10 +180,10 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 	#market .contWrap li.hasText a {opacity: 1;} 
 	#market .contWrap li.hasText:hover span {opacity: 1;} 
 	#market .contWrap li:hover span {width: 100%; height: 256px; margin-left: 0px; margin-bottom: 0px; box-shadow: 0px 0px 0px transparent;}
-	/* CScenter */
+	
 	#CScenter .leftArea > div {float: left; width: 45%;}
 	#CScenter .leftArea > QnA {float: right;}
-	/* footer */
+	
 	#footer .wrap {width: 100%;}
 }
 @media only screen and (max-width:770px){ /* tablet */
@@ -202,10 +198,10 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 	#header #GNB ul ul {position: relative;}
 	#header .lnb {display: none;}
 	#header #GNB .mobile_lnb {display: block;}
+	
 	.keyvisual {overflow: hidden;}
 	.keyvisual .gallery {width: 100%;}
-	/* section */
-	/* brand */
+	
 	#brand {margin-top: 50px;}
 	#brand .printGallery {float: none; margin-left: 0; margin-top: 0; margin-bottom: 0; width: 100%; height: 300px; background-size: 100% auto; background-position: center center; text-align: left;}
 	#brand .printGallery h3 {margin-top: 0; padding-top: 10%; padding-left: 10%;}
@@ -221,17 +217,17 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 	#brand .brandGallery ul {width: 1040px;}
 	#brand .brandGallery li {width: 130px; height: 130px;}
 	#brand .brandGallery::before {left: 260px; top: 0; width: 130px; height: 130px; border: 3px solid #d5d1d0;}
-	/* market */
+
 	#market {margin-top: 150px;}
-	#market .titWrap {background: none; margin-left: 0; margin-top: 0; width: 100%; height: auto; text-align: center; overflow: visible;}
+	#market .titWrap {background: none; margin-left: 0; margin-top: 0; width: 100%; height: 100px; text-align: center; overflow: visible;}
 	#market .titWrap h3 {margin-top: -30px;}
 	#market .titWrap .making {display: none;}
 	#market .contWrap {float: none; margin-top: 0; margin-left: 0; padding-top: 0; width: 100%; background: url(../images/market_insta_mobile.png) no-repeat 0 0; background-size: 100% auto;}
-	#market .contWrap ul {width: 100%; text-align: center;}
+	#market .contWrap ul {width: 100%; height: auto; text-align: center;}
 	#market .contWrap li {width: 30%; height: 0; padding-bottom: 30%; margin-left: 1%; margin-bottom: 1%; overflow: hidden;}
 	#market .contWrap li:first-child, #market .contWrap ul li:nth-child(4), #market .contWrap ul li:nth-child(7) {margin-left: 0;}
 	#market .contWrap li span {display: block; width: 100%; height: 256px;}
-	/* CScenter */
+
 	#CScenter {margin-top: 50px;}
 	#CScenter .rightArea {width: 100%; }
 	#CScenter .rightArea img {display: none;}
@@ -247,7 +243,6 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 	#CScenter .leftArea .tabBtn a {position: relative; margin: 0; padding: 0; font-size: 1.188em; line-height: 45px; font-family: 'Bad Script', cursive; font-weight: 700; z-index: 100;}
 	#CScenter .leftArea table {width: 100%; height: 100%;}
 	
-	/* footer */
 	#footer {text-align: center; height: auto;}
 	#footer .footer_logo {display: none; /*float: none; width: 36px;*/ 
 	#footer .footer_logo a {margin: 0; width: 100%; height: 42px; background: url(../images/icon.png) no-repeat 0 0; background-size: 132px auto;}
@@ -266,33 +261,28 @@ section p.title {margin-top: -10px; font-size: 1.25em; font-weight: 300; font-st
 	
 	section {font-size: 0.75em; margin-top: 30px;}
 
-	/* #brand {font-size: 0.9em;} */
-	/* #brand .printGallery {float: none; margin-left: 0; margin-top: 0; width: 100%; height: 250px; background-size: 100% auto; background-position: center center; text-align: left;} */
-	/* #brand .printGallery h3 {margin-top: 0; padding-top: 10%; padding-left: 10%;} */
-	/* #brand .printGallery p {padding-left: 10%; color: #fff;} */
-	/* #brand .brandStory {float: none; margin-top: 0; width: 100%; text-align: center;} */
-	/* #brand .brandStory .history {margin-top: 20px; padding-left: 35%; text-align: left;} */
-	/* #brand .brandStory .history dl {margin-top: 10px;} */
-	/* #brand .brandStory .history dl.start::before {left: -21px; top: 10px; width: 1px; height: 120px;} */
-	/* #brand .brandStory .copy h4 {margin-top: 10px; font-size: 1.1em;} */
-	/* #brand .brandStory .copy p {font-size: 0.688em;} */
-	/* #brand .brandStory .brandStorybtn a {margin: 0 auto; margin-top: 30px; width: 190px; line-height: 50px; font-size: 0.75em;} */
-	/* #brand .brandGallery {margin: 0; width: 100%; height: 80px; overflow: hidden;} */
-	/* #brand .brandGallery ul {left: -35px; width: 490px;} */
-	/* #brand .brandGallery li {width: 70px; height: 70px;} */
-	/* #brand .brandGallery li.more {display: none;} */
-	/* #brand .brandGallery::before {left: 35px; top: 0; width: 70px; height: 70px;} */
-	/* #brand .brandGallery::after {left: 68px; top: 74px;} */
-	
+	#brand {font-size: 0.9em;}
+	#brand .printGallery {float: none; margin-left: 0; margin-top: 0; width: 100%; height: 250px; background-size: 100% auto; background-position: center center; text-align: left;}
+	#brand .printGallery h3 {margin-top: 0; padding-top: 10%; padding-left: 10%;}
+	#brand .printGallery p {padding-left: 10%; color: #fff;}
+	#brand .brandStory {float: none; margin-top: 0; width: 100%; text-align: center;}
+	#brand .brandStory .history {margin-top: 20px; padding-left: 35%; text-align: left;}
+	#brand .brandStory .history dl {margin-top: 10px;}
+	#brand .brandStory .history dl.start::before {left: -21px; top: 10px; width: 1px; height: 120px;}
+	#brand .brandStory .copy h4 {margin-top: 10px; font-size: 1.1em;}
+	#brand .brandStory .copy p {font-size: 0.688em;}
+	#brand .brandStory .brandStorybtn a {margin: 0 auto; margin-top: 30px; width: 190px; line-height: 50px; font-size: 0.75em;}
+	#brand .brandGallery {margin: 0; width: 100%; height: 80px; overflow: hidden;}
+	#brand .brandGallery ul {left: -35px; width: 490px;}
+	#brand .brandGallery li {width: 70px; height: 70px;}
+	#brand .brandGallery li.more {display: none;}
+	#brand .brandGallery::before {left: 35px; top: 0; width: 70px; height: 70px;}
+	#brand .brandGallery::after {left: 68px; top: 74px;}
 	/* market */
-	/* #market .titWrap {background-size: 100% auto; background-position: center top; font-size: 0.9em;} */
-	/* #market .titWrap img {margin-top: -4%; width: 100%;} */
-	/* #market .contWrap li {width: 45%; height: 0; padding-bottom: 45%; margin-left: 1%; margin-bottom: 1%; overflow: hidden;} */
-	/* #market .contWrap li:first-child, #market .contWrap ul li:nth-child(4), #market .contWrap ul li:nth-child(7) {margin-left: 1%;} */
-	/* #market .contWrap li:first-child, #market .contWrap ul li:nth-child(3), #market .contWrap li:nth-child(5), #market .contWrap ul li:nth-child(7) {margin-left: 0;} */
-	/* #market .contWrap ul li:last-child {display: none;} */
-	/* #market .contWrap li span {display: block; width: 100%; height: 220px;} */
+	#market .titWrap {background-size: 100% auto; background-position: center top; font-size: 0.9em;}
+	#market .titWrap img {margin-top: -4%; width: 100%;}
+	#market .contWrap li span {display: block; width: 100%; height: 220px;}
 	/* CScenter */
-	/* #CScenter .wrap span.csbtn {font-size: 2.866em;} */
+	#CScenter .wrap span.csbtn {font-size: 2.866em;}
 	/* notice */
 }

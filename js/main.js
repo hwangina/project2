@@ -160,8 +160,10 @@ $(function(){
 			$("section").css({height:"auto"});
 			$("#brand .wrap").prepend($(".brandGallery"));
 			$("#brand .wrap").prepend($(".printGallery"));
-			$("#market .contWrap").css({height:H});
+			$("#market .titWrap").css({height:"auto"});
+			$("#market .contWrap").css({height:W});
 			$("#market .contWrap").css({"padding-top":W*93/100});
+			$("#market .contWrap ul").css({height:W});
 		}
 		else{ // mobile mediaQuery440
 			headers=60;
@@ -170,7 +172,9 @@ $(function(){
 			$("section").css({height:"auto"});
 			$("#brand .wrap").prepend($(".brandGallery"));
 			$("#brand .wrap").prepend($(".printGallery"));
+			$("#market .titWrap").css({height:"auto"});
 			$("#market .contWrap").css({"padding-top":W*93/100});
+			$("#market .contWrap ul").css({height:W});
 		}
 		// basic CSS setting
 		$(".keyvisual").css({height:H-headers});
